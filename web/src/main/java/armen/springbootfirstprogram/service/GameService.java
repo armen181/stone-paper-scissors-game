@@ -6,12 +6,16 @@ public interface GameService {
 
     String getMainMessage();
 
-    String getResultMessage();
+    String getResultMessage(int yourSet);
 
-    void checkGuess(int guess);
+    void setValues(int guess);
 
     void reset();
 
     int getRandomValue();
+
+    int getYourBalance();
+
+    int getYourWin();
 
 }

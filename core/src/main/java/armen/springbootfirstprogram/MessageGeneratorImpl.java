@@ -16,6 +16,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
     private static final String WIN = "game.win";
     private static final String LOSE = "game.lose";
     private static final String EQUAL = "game.equal";
+    private static final String GAME_OVER = "game.over";
     private static final String INVALID_RANGE = "game.invalid.range";
     private static final String FIRST_GUESS = "game.first.guess";
     private static final String HIGHER = "game.higher";
@@ -44,12 +45,16 @@ public class MessageGeneratorImpl implements MessageGenerator {
     }
 
     @Override
-    public String getResultMessage() {
-        if(game.isGameWon()==1){
+    public String getResultMessage(int yourSet) {
+        int gameState= game.isGameWon(yourSet);
+
+        if(game.getIsGameEnded())
+            return getMessage(GAME_OVER);
+        if(gameState==1){
             return getMessage(WIN, game.getRandomNumber(), game.getValue());
-        }else if(game.isGameWon()==-1){
+        }else if(gameState==-1){
             return getMessage(LOSE, game.getRandomNumber(), game.getValue());
-        }else if(game.isGameWon()==0) {
+        }else if(gameState==0) {
             return getMessage(EQUAL, game.getRandomNumber(), game.getValue());
         }
 

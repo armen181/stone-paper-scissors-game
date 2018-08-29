@@ -12,13 +12,15 @@
     <script src="js/ajax.js"></script>
 </head>
 <body>
-<div class="row h-100">
-    <div class="col-sm-3 flex-fill" >
-<div class="col" align="left">
+<div class="row">
+    <div class="col-sm-3 ">
+<div class="col" >
+        <span class="border border-primary">
         <input class="img-responsive" id="inputButtonPaper" type="image" src="pic/paper.jpg" value="2" />
         <input class="img-responsive" id="inputButtonRock" type="image" src="pic/rock.jpg" value="1" />
         <input class="img-responsive" id="inputButtonScissors" type="image" src="pic/scissors.jpg" value="3" />
-</div>
+</span>
+    </div>
 </div>
     <div class="col-sm-6">
         <div class="row">
@@ -44,8 +46,8 @@
                     <label class="radio-inline"><input type="radio" name="optradio">20</label>
                     <label class="radio-inline"><input type="radio" name="optradio">25</label>
                     <label class="radio-inline"><input type="radio" name="optradio">30</label>
-                    <div class="row"><h3>Your Balance is </h3><h3>100</h3><h3>$</h3></div>
-                    <h3>Your Win 100$</h3>
+                    <h3 id="balance">Your Balance is 100$</h3>
+                    <h3 id="yourWin">Your Win 0$</h3>
                 </div>
 
 

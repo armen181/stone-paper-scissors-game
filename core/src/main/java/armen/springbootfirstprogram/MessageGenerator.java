@@ -4,5 +4,5 @@ public interface MessageGenerator {
 
     String getMainMessage();
 
-    String getResultMessage();
+    String getResultMessage(int yourSet);
 }

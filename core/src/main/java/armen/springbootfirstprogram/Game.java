@@ -6,7 +6,11 @@ public interface Game {
 
     void setValue(int value);
 
-    int isGameWon();
+    int isGameWon(int yourSet);
+
+    void balanceAdd(int yourSet);
+
+    void balanceRmv(int yourSet);
 
     void reset();
 
@@ -15,6 +19,14 @@ public interface Game {
     int getRandomNumber();
 
     int check (int value);
+
+    int getBalance();
+
+    void setBalance(int balance);
+
+    int getYourWin();
+
+    boolean getIsGameEnded();
 
 
 

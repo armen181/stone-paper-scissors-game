@@ -27,7 +27,7 @@ public class ConsoleGamePlay {
         log.info("Start() --> Container ready for use.");
 
         Scanner scanner = new Scanner(System.in);
-
+        game.setBalance(100);
         while (true) {
             System.out.println(messageGenerator.getMainMessage());
 //            stone = 1;
@@ -37,25 +37,33 @@ public class ConsoleGamePlay {
             System.out.println("Please enter number from 1 to 3, where 1 = stone, 2 = paper and 3 = scissors. ");
 
             try {
+
+                System.out.println("Your balance is "+ game.getBalance());
+                System.out.println("Please enter your Set");
+                int yourSet = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.println("Please enter your choise");
                 int value = scanner.nextInt();
                 scanner.nextLine();
+
                 if(value>=1&&value<=3) {
                     game.randomValueGenerator();
                     game.setValue(value);
 
-                    System.out.println(messageGenerator.getResultMessage());
+                    System.out.println(messageGenerator.getResultMessage(yourSet));
 
 
-                    if (game.isGameWon() == 1) {
-                        System.out.println("Play again y/n?");
-
-                        String playAgainString = scanner.nextLine().trim();
-                        if (!playAgainString.equalsIgnoreCase("y")) {
-                            break;
-                        }
-
-                        //game.reset();
-                    }
+//                    if (game.isGameWon(yourSet) == 1) {
+//                        System.out.println("Play again y/n?");
+//
+//                        String playAgainString = scanner.nextLine().trim();
+//                        if (!playAgainString.equalsIgnoreCase("y")) {
+//                            break;
+//                        }
+//
+//                        //game.reset();
+//                    }
                 } else {
                     System.out.println("invalid input");
                 }

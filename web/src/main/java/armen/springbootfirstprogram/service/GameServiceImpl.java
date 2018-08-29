@@ -34,7 +34,7 @@ public class GameServiceImpl implements GameService {
     // == public methods ==
     @Override
     public boolean isGameOver() {
-        return true;
+        return game.getIsGameEnded();
     }
 
     @Override
@@ -43,15 +43,15 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public String getResultMessage() {
-        return messageGenerator.getResultMessage();
+    public String getResultMessage(int yourSet) {
+        return messageGenerator.getResultMessage(yourSet);
     }
 
     @Override
-    public void checkGuess(int guess) {
+    public void setValues(int guess) {
         game.randomValueGenerator();
         game.setValue(guess);
-        game.check(guess);
+        //messageGenerator.getResultMessage(yourSet);
     }
 
     @Override
@@ -62,5 +62,15 @@ public class GameServiceImpl implements GameService {
     @Override
     public int getRandomValue() {
         return game.getRandomNumber();
+    }
+
+    @Override
+    public int getYourBalance() {
+        return game.getBalance();
+    }
+
+    @Override
+    public int getYourWin() {
+        return game.getYourWin();
     }
 }

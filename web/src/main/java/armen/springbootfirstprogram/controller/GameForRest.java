@@ -24,20 +24,19 @@ public class GameForRest {
     }
 
 
-    @GetMapping("test")
-    public String test(){
-        log.info("guess= {}", 1);
-        gameService.checkGuess(1);
+    @GetMapping("game")
+    public boolean test(){
 
-
-        return gameService.getResultMessage();
+        return gameService.isGameOver();
     }
-    @PostMapping("test")
-    public PostAnswer test(@RequestHeader int guess){
-        log.info("guess= {}", guess);
-        gameService.checkGuess(guess);
 
-        return new PostAnswer(gameService.getResultMessage(), 100, 200, gameService.getRandomValue(),guess);
+
+    @PostMapping("game")
+    public PostAnswer test(@RequestHeader int guess, @RequestHeader int radioButton){
+        log.info("guess= {}", guess);
+        gameService.setValues(guess);
+
+        return new PostAnswer(gameService.getResultMessage(radioButton), gameService.getYourBalance(), gameService.getYourWin(), gameService.getRandomValue(),guess);
     }
 
 }
