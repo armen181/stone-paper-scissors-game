@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $("button").click(function(){
-        var bla = $('#number').val();
+    $("#inputButtonPaper").click(function(){
+        var bla = $('#inputButtonPaper').val();
 
         var settings = {
             "async": true,
@@ -14,7 +14,41 @@ $(document).ready(function(){
 
         $.ajax(settings).done(function (response) {
             $('#result').text(response);
-            console.log(response);
+        });
+    });
+
+    $("#inputButtonRock").click(function(){
+        var bla = $('#inputButtonRock').val();
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "test",
+            "method": "POST",
+            "headers": {
+                "guess": bla,
+            }
+        }
+
+        $.ajax(settings).done(function (response) {
+            $('#result').text(response);
+        });
+    });
+    $("#inputButtonScissors").click(function(){
+        var bla = $('#inputButtonScissors').val();
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "test",
+            "method": "POST",
+            "headers": {
+                "guess": bla,
+            }
+        }
+
+        $.ajax(settings).done(function (response) {
+            $('#result').text(response);
         });
     });
 });

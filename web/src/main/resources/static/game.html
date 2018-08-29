@@ -6,19 +6,75 @@
     <meta charset="UTF-8">
     <title id="title">Paper Stone Scissors Game</title>
     <script src="js/jquery.min.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/site.css" rel="stylesheet"/>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ajax.js"></script>
 </head>
 <body>
-<div class="row" >
-    <div class="col-sm-3"></div>
-<div class="col-sm-6" align="middle">
-<input id="number" type="text" value="2"/>
-<button>Send</button>
-<h3 id="result">Result</h3>
+<div class="row h-100">
+    <div class="col-sm-3 flex-fill" >
+<div class="col" align="left">
+        <input class="img-responsive" id="inputButtonPaper" type="image" src="pic/paper.jpg" value="2" />
+        <input class="img-responsive" id="inputButtonRock" type="image" src="pic/rock.jpg" value="1" />
+        <input class="img-responsive" id="inputButtonScissors" type="image" src="pic/scissors.jpg" value="3" />
 </div>
-    <div class="col-sm-3"></div>
+</div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="row">
+            <!--<div class="col-sm-1"></div>-->
+
+            <div class="col-sm-4">
+                <img  class="img-responsive" src="pic/paper.jpg" />
+            </div>
+            <div class="col-sm-3">
+                <h3 id="result" class="h" align="middle">Result</h3>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-responsive" src="pic/paper.jpg" />
+            </div>
+            </div>
+                <div class="row" align="middle">
+
+                        <h3>Your Set</h3>
+                    <label class="radio-inline"><input type="radio" name="optradio" checked>5</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">10</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">15</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">20</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">25</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">30</label>
+                    <h3>Your Balance is 100$</h3>
+                    <h3>Your Win 100$</h3>
+                </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="col-sm-3">
+        <div align="center"><h4>TOP Score</h4></div>
+        <table class="table table-striped">
+            <thead>
+            <th scope="row">Name</th>
+            <th scope="row">Score</th>
+            </thead>
+            <tr>
+                <td>Armen</td>
+                <td>1520</td>
+            </tr>
+            <tr>
+                <td>Karen</td>
+                <td>1300</td>
+            </tr>
+            <tr>
+                <td>Arsen</td>
+                <td>1260</td>
+            </tr>
+        </table>
+
+    </div>
 </div>
 
 </body>
