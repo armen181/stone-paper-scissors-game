@@ -13,7 +13,7 @@ import java.util.Random;
 public class GameImpl implements Game {
 
     // == fields ==
-    private final int stone = 1;
+    private final int rock = 1;
     private final int paper = 2;
     private final int scissors = 3;
 
@@ -53,19 +53,19 @@ public class GameImpl implements Game {
 
     @Override
     public int check(int value) {
-        if(randomNumber==stone && value==paper)
+        if(randomNumber== rock && value==paper)
             return 1;
-        else if(randomNumber==stone && value==scissors)
+        else if(randomNumber== rock && value==scissors)
             return -1;
-        else if(randomNumber==stone && value==stone)
+        else if(randomNumber== rock && value== rock)
             return 0;
-        else if (randomNumber==paper && value==stone)
+        else if (randomNumber==paper && value== rock)
             return -1;
         else if (randomNumber==paper && value==scissors)
             return 1;
         else if (randomNumber==paper && value==paper)
             return 0;
-        else if(randomNumber==scissors && value==stone)
+        else if(randomNumber==scissors && value== rock)
             return 1;
         else if(randomNumber==scissors && value==scissors)
             return 0;

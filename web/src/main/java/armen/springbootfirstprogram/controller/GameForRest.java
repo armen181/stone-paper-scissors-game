@@ -37,7 +37,7 @@ public class GameForRest {
         log.info("guess= {}", guess);
         gameService.checkGuess(guess);
 
-        return new PostAnswer(gameService.getResultMessage(), 100, 200);
+        return new PostAnswer(gameService.getResultMessage(), 100, 200, gameService.getRandomValue(),guess);
     }
 
 }

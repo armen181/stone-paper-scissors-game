@@ -58,4 +58,9 @@ public class GameServiceImpl implements GameService {
     public void reset() {
         game.reset();
     }
+
+    @Override
+    public int getRandomValue() {
+        return game.getRandomNumber();
+    }
 }
