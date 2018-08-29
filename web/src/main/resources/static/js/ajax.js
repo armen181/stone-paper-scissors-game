@@ -48,7 +48,8 @@ $(document).ready(function(){
         }
 
         $.ajax(settings).done(function (response) {
-            $('#result').text(response);
+            // var obj = JSON.parse(response);
+            $('#result').text(response.message);
         });
     });
 });

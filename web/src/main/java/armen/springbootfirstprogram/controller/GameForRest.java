@@ -2,6 +2,7 @@ package armen.springbootfirstprogram.controller;
 
 
 import armen.springbootfirstprogram.service.GameService;
+import armen.springbootfirstprogram.util.PostAnswer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,10 +33,11 @@ public class GameForRest {
         return gameService.getResultMessage();
     }
     @PostMapping("test")
-    public String test(@RequestHeader int guess){
+    public PostAnswer test(@RequestHeader int guess){
         log.info("guess= {}", guess);
         gameService.checkGuess(guess);
-        return gameService.getResultMessage();
+
+        return new PostAnswer(gameService.getResultMessage(), 100, 200);
     }
 
 }
