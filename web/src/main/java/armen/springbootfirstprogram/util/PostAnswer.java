@@ -14,12 +14,14 @@ public class PostAnswer {
     private int yourWinBalance;
     private int compValue;
     private int yourValue;
+    private boolean isGameEnded;
 
-    public PostAnswer(String message, int yourBalance, int yourWinBalance, int compValue, int yourValue) {
+    public PostAnswer(String message, int yourBalance, int yourWinBalance, int compValue, int yourValue, boolean isGameEnded) {
         this.message = message;
         this.yourBalance = yourBalance;
         this.yourWinBalance = yourWinBalance;
         this.compValue = compValue;
         this.yourValue = yourValue;
+        this.isGameEnded = isGameEnded;
     }
 }

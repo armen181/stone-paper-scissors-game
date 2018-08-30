@@ -1,22 +1,35 @@
 function parseJSON(response) {
+    if(!response.gameEnded) {
 
-    if (response.compValue == 1) {
-        $('#compChosen').attr('src', 'pic/rock.jpg');
-    } else if (response.compValue == 2) {
-        $('#compChosen').attr('src', 'pic/paper.jpg');
-    } else if (response.compValue == 3) {
-        $('#compChosen').attr('src', 'pic/scissors.jpg');
+        if (response.compValue == 1) {
+            $('#compChosen').attr('src', 'pic/rock.jpg');
+        } else if (response.compValue == 2) {
+            $('#compChosen').attr('src', 'pic/paper.jpg');
+        } else if (response.compValue == 3) {
+            $('#compChosen').attr('src', 'pic/scissors.jpg');
+        }
+
+        if (response.yourValue == 1) {
+            $('#yourChosen').attr('src', 'pic/rock.jpg');
+        } else if (response.yourValue == 2) {
+            $('#yourChosen').attr('src', 'pic/paper.jpg');
+        } else if (response.yourValue == 3) {
+            $('#yourChosen').attr('src', 'pic/scissors.jpg');
+        }
+        document.getElementById("balance").innerText = "Your Balance is " + response.yourBalance + "$";
+        document.getElementById("yourWin").innerText = "Your Win " + response.yourWinBalance + "$";
+
+        $('#exampleModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        }, 'show');
+
+    }
+      else {
+
+
     }
 
-    if (response.yourValue == 1) {
-        $('#yourChosen').attr('src', 'pic/rock.jpg');
-    } else if (response.yourValue == 2) {
-        $('#yourChosen').attr('src', 'pic/paper.jpg');
-    } else if (response.yourValue == 3) {
-        $('#yourChosen').attr('src', 'pic/scissors.jpg');
-    }
-    document.getElementById("balance").innerText = "Your Balance is "+response.yourBalance+"$";
-    document.getElementById("yourWin").innerText = "Your Win "+response.yourWinBalance+ "$";
 
 
     }
@@ -44,7 +57,6 @@ function parseJSON(response) {
                 $('#result').text(response.message);
             });
         });
-
         $("#inputButtonRock").click(function () {
             var bla = $('#inputButtonRock').val();
             var radioButton = Number($('[name="optradio"]:checked').closest('label').text());
@@ -86,4 +98,7 @@ function parseJSON(response) {
                 $('#result').text(response.message);
             });
         });
+
+
+
     });

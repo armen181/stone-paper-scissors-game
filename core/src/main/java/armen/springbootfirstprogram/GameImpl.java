@@ -51,7 +51,7 @@ public class GameImpl implements Game {
 
     @Override
     public void balanceAdd(int yourSet) {
-        balance += yourSet;
+        //balance += yourSet;
         yourWin += yourSet;
     }
 
@@ -66,12 +66,15 @@ public class GameImpl implements Game {
 
     @Override
     public int isGameWon(int yourSet) {
-        if (check(value) == 1) {
-            balanceAdd(yourSet);
-            return 1;
-        } else if (check(value) == -1) {
-            balanceRmv(yourSet);
-            return -1;
+
+        if(!isGameEnded) {
+            if (check(value) == 1) {
+                balanceAdd(yourSet);
+                return 1;
+            } else if (check(value) == -1) {
+                balanceRmv(yourSet);
+                return -1;
+            }
         }
         return 0;
     }

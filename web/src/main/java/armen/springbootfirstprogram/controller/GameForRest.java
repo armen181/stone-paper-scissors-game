@@ -36,7 +36,7 @@ public class GameForRest {
         log.info("guess= {}", guess);
         gameService.setValues(guess);
 
-        return new PostAnswer(gameService.getResultMessage(radioButton), gameService.getYourBalance(), gameService.getYourWin(), gameService.getRandomValue(),guess);
+        return new PostAnswer(gameService.getResultMessage(radioButton), gameService.getYourBalance()<0 ? 0: gameService.getYourBalance(), gameService.getYourWin(), gameService.getRandomValue(),guess, gameService.isGameOver());
     }
 
 }
