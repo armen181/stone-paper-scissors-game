@@ -19,14 +19,15 @@ function parseJSON(response) {
         document.getElementById("balance").innerText = "Your Balance is " + response.yourBalance + "$";
         document.getElementById("yourWin").innerText = "Your Win " + response.yourWinBalance + "$";
 
+
+
+    }
+      else {
+        document.getElementById("yourWinID").innerText =response.yourWinBalance;
         $('#exampleModal').modal({
             backdrop: 'static',
             keyboard: false
         }, 'show');
-
-    }
-      else {
-
 
     }
 
@@ -98,7 +99,24 @@ function parseJSON(response) {
                 $('#result').text(response.message);
             });
         });
+        $("#resetGame").click(function () {
+           var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "game",
+                "method": "GET",
+                "headers": {
+                }
+            }
 
+            $.ajax(settings).done(function (response) {
+
+                parseJSON(response);
+                $('#result').text(response.message);
+                $('#exampleModal').modal('hide');
+
+            });
+        });
 
 
     });

@@ -25,9 +25,9 @@ public class GameForRest {
 
 
     @GetMapping("game")
-    public boolean test(){
-
-        return gameService.isGameOver();
+    public PostAnswer test(){
+        gameService.reset();
+        return new PostAnswer("Start new game", 100, 0, 1,1, false);
     }
 
 
