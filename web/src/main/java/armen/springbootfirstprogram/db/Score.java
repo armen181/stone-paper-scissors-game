@@ -15,7 +15,7 @@ public class Score {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int _id;
+        private int id;
         private String name;
         private int score;
 
