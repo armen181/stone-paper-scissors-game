@@ -1,4 +1,4 @@
-package armen.springbootfirstprogram.domain;
+package armen.springbootfirstprogram.db;
 
 import lombok.Getter;
 import lombok.Setter;

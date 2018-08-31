@@ -1,10 +1,8 @@
-package armen.springbootfirstprogram.controller.commands;
+package armen.springbootfirstprogram.commands;
 
 
 import lombok.Getter;
 import lombok.Setter;
-
-import java.math.BigDecimal;
 
 /**
  * Created by jt on 1/10/17.
