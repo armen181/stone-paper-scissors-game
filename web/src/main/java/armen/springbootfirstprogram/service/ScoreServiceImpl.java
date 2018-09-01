@@ -7,6 +7,9 @@ import armen.springbootfirstprogram.repositories.ScopeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by jt on 1/10/17.
  */
@@ -23,12 +26,12 @@ public class ScoreServiceImpl implements ScoreService {
     }
 
 
-//    @Override
-//    public List<Score> listAll() {
-//        List<Score> scores = new ArrayList<>();
-//        productRepository.findAll().forEach(scores::add); //fun with Java 8
-//        return scores;
-//    }
+    @Override
+    public List<Score> listAll() {
+        List<Score> scores = new ArrayList<>();
+        scoreRepository.findAll().forEach(scores::add); //fun with Java 8
+        return scores;
+    }
 
 //    @Override
 //    public Score getById(Long id) {

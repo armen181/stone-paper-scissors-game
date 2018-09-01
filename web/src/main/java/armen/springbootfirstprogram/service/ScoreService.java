@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface ScoreService {
 
-   // List<Product> listAll();
+    List<Score> listAll();
 
    // Product getById(Long id);
 

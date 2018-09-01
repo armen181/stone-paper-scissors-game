@@ -100,7 +100,7 @@ function parseJSON(response) {
             });
         });
         $("#resetGame").click(function () {
-           var settings = {
+            var settings = {
                 "async": true,
                 "crossDomain": true,
                 "url": "game",
@@ -114,6 +114,46 @@ function parseJSON(response) {
                 parseJSON(response);
                 $('#result').text(response.message);
                 $('#exampleModal').modal('hide');
+
+            });
+        });
+        $("#saveNameBtn").click(function () {
+            var bla = document.getElementById("yourWinID").innerText;
+            var name = $('#nameForTable').val();//document.getElementById("nameForTable").innerText
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "db",
+                "method": "POST",
+                "headers": {
+                    "value": bla,
+                    "name":name,
+                }
+            }
+
+            $.ajax(settings).done(function (response) {
+
+               parseJSON(response);
+               $('#result').text(response.message);
+               $('#exampleModal').modal('hide');
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "db",
+                    "method": "GET",
+                    "headers": {
+                    }
+                }
+                $.ajax(settings).done(function (data) {
+
+                    var table = $('#table');
+                    $.each(data, function (name, score) {console.log('name '+data[name].name+' score '+data[name].score);
+                        $(table).append($('<tr>').append($('<td>').text(data[name].name)).append($('<td>').text(data[name].score)));
+
+                    });
+
+                });
+
 
             });
         });
